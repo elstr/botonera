@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Keypad with Sounds</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div id="keypad" class="keypad">
+    <div class="keypad-row">
+      <button class="keypad-button" onclick="playSound(0)">DAAALEEE!!!!</button>
+      <button class="keypad-button" onclick="playSound(1)">METE METE METE</button>
+    </div>
+    <div class="keypad-row">
+      <button class="keypad-button" onclick="playSound(2)">LA ESPALDA</button>
+      <button class="keypad-button" onclick="playSound(3)">QUIERO GANARRRRRR</button>
+    </div>
+    <div class="keypad-row">
+      <button class="keypad-button" onclick="playSound(4)">DALE CRAAAAACK</button>
+      <button class="keypad-button" onclick="playSound(5)">BIEEEN FLOOOOR</button>
+    </div>
+    <div class="keypad-row">
+      <button class="keypad-button" onclick="playSound(6)">AGUS FLOJA</button>
+      <button class="keypad-button" onclick="playSound(7)">LA ESPERAAAS LA ESPERAAAS</button>
+    </div>
+    <div class="keypad-row">
+      <button class="keypad-button" onclick="playSound(8)">NALI LA ESPALDA</button>
+      <button class="keypad-button" onclick="playSound(9)">GOL, LCDTH - GOL!</button>
+    </div>
+    <div class="keypad-row">
+      <button class="keypad-button" onclick="playSound(10)">Entre tiempo</button>
+    </div>
+  </div>
+
+  <script>
+    // Define an array of sound files
+    const sounds = ['./sounds/DALE.mp3', './sounds/METE.mp3', './sounds/ESPALDA.mp3', 
+    './sounds/QUIERO-GANAR.mp3', './sounds/DALE-CRACK.mp3', './sounds/BIEN-FLOR.mp3',
+    './sounds/AGUSTINA-FLOJA.mp3', './sounds/ESPERA-METE.mp3', './sounds/NALI.mp3', 
+    './sounds/GOL.mp3',     './sounds/ENTRE-TIEMPO.mp3', 
+
+    
+  ];
+
+    // Store the reference to the currently playing audio
+    let currentAudio = null;
+
+    // Function to play sound
+    function playSound(index) {
+      // Check if there is a currently playing audio and stop it
+      if (currentAudio) {
+        currentAudio.pause();
+      }
+
+      // Create a new audio element and play the sound
+      const audio = new Audio(sounds[index]);
+      audio.play();
+
+      // Set the current audio to the new audio element
+      currentAudio = audio;
+    }
+  </script>
+</body>
+
+</html>
